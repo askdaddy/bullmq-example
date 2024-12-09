@@ -11,6 +11,6 @@ const worker = new Worker('my-jobs', execute, {connection});
 
 async function execute(job) {
     // console.log(`${process.pid},${job.id}`);
-    console.log(`${job.id}`);
-    await job.moveToCompleted();
+    console.log(`[${process.pid}]Processing job ${job.id} with data: ${job.data.jobData}`);
+    // await job.moveToCompleted();
 }

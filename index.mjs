@@ -27,6 +27,14 @@ const startServer = async () => {
         console.log(`HTTP server is running at http://localhost:${port}`);
     });
 
+    await myQueue.upsertJobScheduler('repeat-every-1s',
+        {every: 1000},
+        {
+            name: "repeat-every-1s",
+            data:{jobData: "repeat-every-1s"},
+            ops: {}
+        });
+
 }
 
 
